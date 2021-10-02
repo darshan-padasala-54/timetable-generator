@@ -1,2 +1,5 @@
-<h3>php artisan migrate</h3>
-<h3>php artisan serve</h3>
+<p>- composer install/up</p>
+<p>- npm install</p>
+<p>- php artisan migrate</p>
+<p>- npm run dev</p>
+<p>- php artisan serve</p>
