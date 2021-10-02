@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <h1>EMI Calculator</h1>
+            <h1>Time Table Generator</h1>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -42,13 +42,6 @@
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>
-{{--            @if (Route::has('password.request'))--}}
-{{--                <div class="flex items-center justify-center mt-4">--}}
-{{--                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">--}}
-{{--                        {{ __('Forgot your password?') }}--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--            @endif--}}
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>

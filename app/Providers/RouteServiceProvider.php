@@ -17,7 +17,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/emi-calculator';
+    public const HOME = '/time-table/step1';
 
     /**
      * The controller namespace for the application.

@@ -22,9 +22,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/emi-calculator', 'App\Http\Controllers\EmiCalculatorController@index')->name('emi-calculator.index');
-    Route::post('/emi-calculator/create', 'App\Http\Controllers\EmiCalculatorController@createHistory')->name('emi-calculator.create');
-    Route::get('/emi-calculator/lists', 'App\Http\Controllers\EmiCalculatorController@history')->name('emi-calculator.lists');
-    Route::get('/emi-calculator/lists/{id}', 'App\Http\Controllers\EmiCalculatorController@getEmiDetails')->name('emi-calculator.view');
+    Route::get('/time-table/step1', 'App\Http\Controllers\TimeTableController@step1')->name('timetable.step1');
+    Route::post('/time-table/step1', 'App\Http\Controllers\TimeTableController@create')->name('timetable.step1.store');
+    Route::get('/time-table/step2/{id}', 'App\Http\Controllers\TimeTableController@getTimeTableDetails')->name('timetable.step2');
+    Route::post('/time-table/generate/{id}', 'App\Http\Controllers\TimeTableController@generateTimeTable')->name('timetable.generate');
 });
-

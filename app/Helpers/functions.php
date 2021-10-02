@@ -1,16 +1,18 @@
 <?php
-if (! function_exists('calculate_monthly_emi')) {
-    function calculate_monthly_emi($principal_amount, $rate_of_interest, $durations)
+if (! function_exists('recursive_associative_shuffle')) {
+    function recursive_associative_shuffle($array)
     {
-        $temp = pow(1 + $rate_of_interest, $durations);
-        $monthly = ($principal_amount * $temp * $rate_of_interest)/($temp-1);
-        return $monthly;
+        $ary_keys = array_keys($array);
+        $ary_values = array_values($array);
+        shuffle($ary_values);
+        foreach($ary_keys as $key => $value) {
+            if (is_array($ary_values[$key]) AND $ary_values[$key] != NULL) {
+                $ary_values[$key] = recursive_associative_shuffle($ary_values[$key]);
+            }
+            $new[$value] = $ary_values[$key];
+        }
+        return $new;
     }
 }
 
-if (! function_exists('amount_format')) {
-    function amount_format($amount, $currency = '₹')
-    {
-        return $currency.number_format($amount);
-    }
-}
+

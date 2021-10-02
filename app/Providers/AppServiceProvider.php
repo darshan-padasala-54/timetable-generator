@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Interfaces\EmiHistoryRepositoryInterface;
+use App\Interfaces\TimeTableRepositoryInterface;
 use App\Repository\EmiHistoryRepository;
+use App\Repository\TimeTableRepository;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -16,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(EmiHistoryRepositoryInterface::class, EmiHistoryRepository::class);
+        $this->app->bind(TimeTableRepositoryInterface::class, TimeTableRepository::class);
     }
 
     /**

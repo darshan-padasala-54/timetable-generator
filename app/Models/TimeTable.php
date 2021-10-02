@@ -4,24 +4,28 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class EmiHistory extends Model
+class TimeTable extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'emi_history';
+    protected $table = 'timetable_history';
     protected $primaryKey = 'history_id';
 
     protected $fillable = [
-        'principal_amount',
-        'rate_of_interest',
+        'working_days',
+        'subjects_per_day',
         'user_id',
-        'durations',
+        'total_subjects',
     ];
 
     public function user(){
         return $this->hasOne(User::class, 'user_id');
+    }
+
+    public function getTotalWeeklyHoursAttribute(){
+        return $this->subjects_per_day * $this->working_days;
     }
 }

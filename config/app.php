@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'EMI-Calculator'),
+    'name' => env('APP_NAME', 'Timetable-Generator'),
 
     /*
     |--------------------------------------------------------------------------
